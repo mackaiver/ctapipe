@@ -324,21 +324,21 @@ class ReconstructedShowerContainer(Container):
     Standard output of algorithms reconstructing shower geometry
     """
 
-    alt = Field(0.0, "reconstructed altitude", unit=u.deg)
-    alt_uncert = Field(0.0, "reconstructed altitude uncertainty", unit=u.deg)
-    az = Field(0.0, "reconstructed azimuth", unit=u.deg)
-    az_uncert = Field(0.0, 'reconstructed azimuth uncertainty', unit=u.deg)
+    alt = Field(np.nan, "reconstructed altitude", unit=u.deg)
+    alt_uncert = Field(np.nan, "reconstructed altitude uncertainty", unit=u.deg)
+    az = Field(np.nan, "reconstructed azimuth", unit=u.deg)
+    az_uncert = Field(np.nan, 'reconstructed azimuth uncertainty', unit=u.deg)
     core_x = Field(
-        0.0, 'reconstructed x coordinate of the core position', unit=u.m
+        np.nan, 'reconstructed x coordinate of the core position', unit=u.m
     )
     core_y = Field(
-        0.0, 'reconstructed y coordinate of the core position', unit=u.m
+        np.nan, 'reconstructed y coordinate of the core position', unit=u.m
     )
     core_uncert = Field(
-        0.0, 'uncertainty of the reconstructed core position', unit=u.m
+        np.nan, 'uncertainty of the reconstructed core position', unit=u.m
     )
-    h_max = Field(0.0, 'reconstructed height of the shower maximum')
-    h_max_uncert = Field(0.0, 'uncertainty of h_max')
+    h_max = Field(np.nan, 'reconstructed height of the shower maximum')
+    h_max_uncert = Field(np.nan, 'uncertainty of h_max')
     is_valid = Field(False, (
         'direction validity flag. True if the shower direction'
         'was properly reconstructed by the algorithm'
@@ -347,8 +347,8 @@ class ReconstructedShowerContainer(Container):
         'list of the telescope ids used in the'
         ' reconstruction of the shower'
     ))
-    average_intensity = Field(0.0, 'average size of used telescopes')
-    goodness_of_fit = Field(0.0, 'measure of algorithm success (if fit)')
+    average_intensity = Field(np.nan, 'average size of used telescopes')
+    goodness_of_fit = Field(np.nan, 'measure of algorithm success (if fit)')
 
 
 class ReconstructedEnergyContainer(Container):
